@@ -1,0 +1,41 @@
+{
+  "name": "qr-code-scanner",
+  "version": "1.0.0",
+  "description": "Complete QR code scanner solution for event management with Google Sheets integration",
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "build:backend": "echo 'Backend build not required'",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "echo \"No tests specified\"",
+    "lint": "cd frontend && npm run lint"
+  },
+  "keywords": [
+    "qr-scanner",
+    "event-management",
+    "google-sheets",
+    "react",
+    "nodejs",
+    "mobile-app"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/qr-code-scanner.git"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/qr-code-scanner#readme",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+} 
