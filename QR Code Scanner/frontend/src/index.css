@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-100 font-sans overflow-x-hidden;
+  }
+  
+  /* Mobile viewport settings */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .scan-button {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold shadow-lg active:scale-95 transition-all duration-150;
+  }
+  
+  .status-valid {
+    @apply bg-success text-white p-4 rounded-lg text-center font-semibold;
+  }
+  
+  .status-error {
+    @apply bg-error text-white p-4 rounded-lg text-center font-semibold;
+  }
+  
+  .history-item {
+    @apply bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-500 mb-2;
+  }
+}
+
+/* Camera preview styles */
+#camera-preview {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* QR code scanning overlay */
+.qr-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border: 2px solid #3B82F6;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.1);
+  pointer-events: none;
+}
+
+.qr-overlay::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #3B82F6, #10B981) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
